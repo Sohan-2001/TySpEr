@@ -1,0 +1,105 @@
+body {
+  user-select: none; /* Chrome, Firefox, Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -webkit-user-select: none; /* Safari */
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x:hidden;
+    margin: 0;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  
+  [contenteditable="true"] {
+    display: inline-block;
+  }
+  
+  
+  html {
+    overflow:auto;
+  }
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+
+  .editable-placeholder:empty:before {
+    content: attr(data-placeholder);
+    color: #ccc;
+    display: block; /* For centering the placeholder */
+   
+  }
+
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+.popup-content {
+    background: rgb(135, 1, 1);
+    color: azure;
+    font-weight: bold;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.popup-button {
+    padding: 10px 20px;
+    background: #380000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.Detailspopup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+.Detailspopup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: start;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.Detailspopup-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+ 

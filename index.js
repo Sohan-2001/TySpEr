@@ -198,8 +198,8 @@ let startTime;
       const string2 = typedText;
       const dis=levenshteinDistance(string1,string2)
       const accuracy=typedText.length-dis
-      const acc=Math.floor((accuracy/string_.length)*100)
-      const speed=Math.ceil((accuracy/timeDifference))
+      let acc=Math.floor((accuracy/string_.length)*100)
+      let speed=Math.ceil((accuracy/timeDifference))
       if(speed<0){
         speed=0;
       }

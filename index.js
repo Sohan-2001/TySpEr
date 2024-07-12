@@ -200,6 +200,12 @@ let startTime;
       const accuracy=typedText.length-dis
       const acc=Math.floor((accuracy/string_.length)*100)
       const speed=Math.ceil((accuracy/timeDifference))
+      if(speed<0){
+        speed=0;
+      }
+      if(acc<0){
+        acc=0;
+      }
       const cardBody = document.querySelector('.card.card3 .card-body');
       cardBody.innerHTML = 'Speed (including accuracy): '+speed+' characters per second<br><br>Accuracy: '+acc+' percent'
 

@@ -98,7 +98,9 @@ let string_='';
 function genTextEasy(){
   showPopup();
   enterFullScreen();
-  const text1=`Sohan Karfa @MASK`
+  const text1=`@MASK is the developer account being holded by Sohan Karfa. This website is built for the learning purpose but 
+  can be a good enterprise solution for training and testing of typing speed with accurate results and 
+  tough texts to type in Medium and Hard section.`
 string_=text1;  
 document.getElementById('showText').innerHTML=string_;
 }

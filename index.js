@@ -216,7 +216,7 @@ let startTime;
 
   function DetailsshowPopup() {
     const popup = document.getElementById('Detailspopup');
-  popup.querySelector('p').innerHTML = `Developed by @MASK<br><br>Tech Stack: HTML, JavaScript, CSS, Bootstrap<br>Algoritm: Levenshtein Distance<br><br>Developer: Sohan Karfa<br>Email: sohan100karfa@gmail.com<br><br>Working: It measures
+  popup.querySelector('p').innerHTML = `Developed by @MASK<br><br>Tech Stack: HTML, JavaScript, CSS, Bootstrap<br>Algorithm: Levenshtein Distance<br><br>Developer: Sohan Karfa<br>Email: sohan100karfa@gmail.com<br><br>Working: It measures
   the Levenshtein Distance between the given and typed string to calculate number of dissimilarities and calculate the accuracy and speed`;
   popup.style.display = 'flex';
 }

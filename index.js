@@ -1,31 +1,33 @@
 
-document.addEventListener('contextmenu', event => event.preventDefault());
-
 function enterFullScreen() {
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-    document.documentElement.mozRequestFullScreen();
-  } else {
-    console.log("Fullscreen API not supported");
-  }
-}
+  const element = document.documentElement;
 
-function handleFullscreenChange() {
-  if (!document.fullscreenElement && 
-      !document.mozFullScreenElement && 
-      !document.webkitFullscreenElement && 
-      !document.msFullscreenElement) {
-    location.reload();
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) { // Firefox
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) { // IE/Edge
+    element.msRequestFullscreen();
+  } else {
+    console.log("Fullscreen API is not supported in this browser.");
   }
 }
 
 document.addEventListener('fullscreenchange', handleFullscreenChange);
 document.addEventListener('mozfullscreenchange', handleFullscreenChange);
 document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+document.addEventListener('msfullscreenchange', handleFullscreenChange);
+
+function handleFullscreenChange() {
+  if (!document.fullscreenElement &&
+      !document.mozFullScreenElement && 
+      !document.webkitFullscreenElement &&
+      !document.msFullscreenElement) {
+    location.reload();
+  }
+}
 
 document.addEventListener('keydown', (event) => {
   if (event.ctrlKey || event.key === 'F12' || (event.ctrlKey && (event.key === 'I' || event.key === 'J' || event.key === 'C' || event.key === 'U'))) {

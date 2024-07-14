@@ -11,7 +11,7 @@ function enterFullScreen() {
   } else if (element.msRequestFullscreen) { // IE/Edge
     element.msRequestFullscreen();
   } else {
-    console.log("Fullscreen API is not supported in this browser.");
+    window.alert("Fullscreen API is not supported in this browser.");
   }
 }
 

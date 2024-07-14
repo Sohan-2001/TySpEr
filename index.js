@@ -1,28 +1,39 @@
 // Enter Fullscreen Function
 function enterFullScreen() {
-  const element = document.documentElement;
+  try{
+    const element = document.documentElement;
 
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-  } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-    element.webkitRequestFullscreen();
-  } else if (element.msRequestFullscreen) { // IE/Edge
-    element.msRequestFullscreen();
-  } else {
-    window.alert("Fullscreen API is not supported in this browser.");
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+      element.msRequestFullscreen();
+    } else {
+      window.alert("Fullscreen API is not supported in this browser.");
+    }
+  } catch(error){
+    window.alert(error)
   }
+  
 }
 
 // Handle Fullscreen Change
 function handleFullscreenChange() {
-  if (!document.fullscreenElement &&
+  try{
+    if (!document.fullscreenElement &&
       !document.mozFullScreenElement &&
       !document.webkitFullscreenElement &&
       !document.msFullscreenElement) {
     location.reload();
   }
+  } 
+  catch(error){
+    window.alert(error)
+  }
+  
 }
 
 // Add Fullscreen Event Listeners
@@ -71,11 +82,17 @@ editableDiv.addEventListener('contextmenu', (e) => e.preventDefault());
 
 // Dark-Light Mode Functions
 function darkMode() {
-  const navbar = document.querySelector('.navbar');
+  try{
+    const navbar = document.querySelector('.navbar');
   const cards = document.querySelectorAll('.card');
   navbar.dataset.bsTheme = 'dark';
   cards.forEach(card => card.dataset.bsTheme = 'dark');
   document.body.style.background = 'black';
+  }
+  catch(error){
+    window.alert(error)
+  }
+  
 }
 
 function lightMode() {

@@ -12,10 +12,10 @@ function enterFullScreen() {
     } else if (element.msRequestFullscreen) { // IE/Edge
       element.msRequestFullscreen();
     } else {
-      window.alert("Fullscreen API is not supported in this browser.");
+      console.log("Fullscreen API is not supported in this browser.");
     }
   } catch(error){
-    window.alert(error)
+     console.log(error)
   }
   
 }
@@ -31,7 +31,7 @@ function handleFullscreenChange() {
   }
   } 
   catch(error){
-    window.alert(error)
+    console.log(error)
   }
   
 }
@@ -90,7 +90,7 @@ function darkMode() {
   document.body.style.background = 'black';
   }
   catch(error){
-    window.alert(error)
+     console.log(error)
   }
   
 }

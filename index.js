@@ -1,3 +1,9 @@
+// Global event listener to prevent right-click
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+}, false);
+
+
 // Enter Fullscreen Function
 function enterFullScreen() {
   try {

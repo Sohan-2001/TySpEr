@@ -102,4 +102,46 @@ html, body {
   cursor: pointer;
 }
 
+
+/* Feedback Popup */
+.Feedbackpopup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.Feedbackpopup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.feedback-list {
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+/* feedback-card styling */
+.feedback-card {
+  border: none; /* Remove default Bootstrap border */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow */
+  margin-bottom: 15px; /* Add spacing between cards */
+}
+
+
+
+
  

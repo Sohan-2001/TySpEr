@@ -1,24 +1,23 @@
 // Enter Fullscreen Function
 function enterFullScreen() {
-  try{
+  try {
     const element = document.documentElement;
 
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) { // Firefox
+    if (document.fullscreenEnabled && element.mozRequestFullScreen) {
       element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) { // IE/Edge
-      element.msRequestFullscreen();
+    } else if (element.requestFullscreen) { // Other browsers
+      element.requestFullscreen();
     } else {
       console.log("Fullscreen API is not supported in this browser.");
     }
-  } catch(error){
-     console.log(error)
+  } catch (error) {
+    console.error(error);
+    alert(error)
   }
-  
 }
+
+
+
 
 // Handle Fullscreen Change
 function handleFullscreenChange() {
@@ -31,7 +30,7 @@ function handleFullscreenChange() {
   }
   } 
   catch(error){
-    console.log(error)
+    window.alert(error)
   }
   
 }
@@ -90,7 +89,7 @@ function darkMode() {
   document.body.style.background = 'black';
   }
   catch(error){
-     console.log(error)
+    window.alert(error)
   }
   
 }
@@ -226,4 +225,14 @@ function DetailsshowPopup() {
 function DetailsclosePopup() {
   const popup = document.getElementById('Detailspopup');
   popup.style.display = 'none';
+}
+
+
+// Show Feedback Pop-Up
+function FeedbackPopup() {
+  document.getElementById("Feedbackpopup").style.display = "block";
+}
+
+function FeedbackclosePopup() {
+  document.getElementById("Feedbackpopup").style.display = "none";
 }
